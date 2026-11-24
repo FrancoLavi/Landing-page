@@ -227,7 +227,7 @@ const initials =(n: string) => n.split(' ').filter(Boolean).slice(0, 2).map((s) 
 
       <div class="glass rounded-3xl p-6 sm:p-10" data-reveal data-delay="0.1">
         <ContactForm
-          client:visible
+          client:load
           email={SITE.email}
           whatsapp={SITE.whatsapp}
           web3formsKey={SITE.web3formsKey}
