@@ -38,5 +38,5 @@ Cuando tengan dominio propio: *Settings → Domains* en Vercel, y agregar `site:
 ## Pendiente antes de lanzar
 
 - [ ] Probar el botón "Continuar por WhatsApp" del formulario.
-- [ ] Imagen para compartir en redes (Open Graph, 1200×630) en `public/` y `og:image` en `src/layouts/Base.astro`.
+- [x] Imagen para compartir en redes (`public/og.png`, 1200×630). Para regenerarla, cambiar el diseño y volver a exportarla.
 - [ ] Limitar la clave de Web3Forms al dominio final desde su panel.

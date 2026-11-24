@@ -5,7 +5,8 @@ import { content, type Lang } from '../i18n/content';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = content[lang].meta;
-const alt = lang === 'es' ? '/en/' : '/';
+const canonical = new URL(lang === 'es' ? '/' : '/en/', Astro.site).href;
+const ogImage = new URL('/og.png', Astro.site).href;
 ---
 
 <!doctype html>
@@ -19,6 +20,17 @@ const alt = lang === 'es' ? '/en/' : '/';
     <meta property="og:title" content={t.title} />
     <meta property="og:description" content={t.description} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Núcleo Software" />
+    <meta property="og:locale" content={lang === 'es' ? 'es_AR' : 'en_US'} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t.title} />
+    <meta name="twitter:description" content={t.description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate" hreflang="es" href="/" />
     <link rel="alternate" hreflang="en" href="/en/" />
